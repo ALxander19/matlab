@@ -1,0 +1,7 @@
+<launch>
+
+  <include file="$(find ur_gazebo)/launch/ur10.launch" />
+
+  <include file="$(find ur10_moveit_config)/launch/demo_planning_execution.launch" />
+
+</launch>
