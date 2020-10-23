@@ -1,0 +1,9 @@
+gazebo_ros_control:
+  pid_gains:
+    kuka_joint_a1: {p: 1000, i: 0, d: 10}
+    kuka_joint_a2: {p: 1000, i: 0, d: 10}
+    kuka_joint_a3: {p: 1000, i: 0, d: 10}
+    kuka_joint_a4: {p: 1000, i: 0, d: 10}
+    kuka_joint_a5: {p: 1000, i: 0, d: 10}
+    kuka_joint_a6: {p: 1000, i: 0, d: 10}
+    kuka_joint_a7: {p: 1000, i: 0, d: 10}

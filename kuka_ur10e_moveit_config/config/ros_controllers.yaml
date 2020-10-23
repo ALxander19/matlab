@@ -1,0 +1,105 @@
+ur10e_controller:
+  position_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - ur10e_shoulder_pan_joint
+      - ur10e_shoulder_lift_joint
+      - ur10e_elbow_joint
+      - ur10e_wrist_1_joint
+      - ur10e_wrist_2_joint
+      - ur10e_wrist_3_joint
+
+    constraints:
+        goal_time: 0.6
+        stopped_velocity_tolerance: 0.1
+        ur10e_shoulder_pan_joint: {trajectory: 0.1, goal: 0.2}
+        ur10e_shoulder_lift_joint: {trajectory: 0.1, goal: 0.2}
+        ur10e_elbow_joint: {trajectory: 0.1, goal: 0.2}
+        ur10e_wrist_1_joint: {trajectory: 0.1, goal: 0.2}
+        ur10e_wrist_2_joint: {trajectory: 0.1, goal: 0.2}
+        ur10e_wrist_3_joint: {trajectory: 0.1, goal: 0.2}
+
+    stop_trajectory_duration: 0.5
+    state_publish_rate:  50
+    action_monitor_rate: 30
+
+  gripper_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - ur10e_upper_finger_base
+      - ur10e_lower_finger_base
+
+    constraints:
+        goal_time: 0.6
+        stopped_velocity_tolerance: 0.1
+        ur10e_upper_finger_base: {trajectory: 0.1, goal: 0.2}
+        ur10e_lower_finger_base: {trajectory: 0.1, goal: 0.2}
+      
+    stop_trajectory_duration: 0.5
+    state_publish_rate:  50
+    action_monitor_rate: 30
+  
+kuka_controller:
+  position_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+        - kuka_joint_a1
+        - kuka_joint_a2
+        - kuka_joint_a3
+        - kuka_joint_a4
+        - kuka_joint_a5
+        - kuka_joint_a6
+        - kuka_joint_a7
+
+    constraints:
+        goal_time: 0.6
+        stopped_velocity_tolerance: 0.1
+        kuka_joint_a1: {trajectory: 0.1, goal: 0.2}
+        kuka_joint_a2: {trajectory: 0.1, goal: 0.2}
+        kuka_joint_a3: {trajectory: 0.1, goal: 0.2}
+        kuka_joint_a4: {trajectory: 0.1, goal: 0.2}
+        kuka_joint_a5: {trajectory: 0.1, goal: 0.2}
+        kuka_joint_a6: {trajectory: 0.1, goal: 0.2}
+        kuka_joint_a7: {trajectory: 0.1, goal: 0.2}
+
+  stop_trajectory_duration: 0.5
+  state_publish_rate:  50
+  action_monitor_rate: 30
+
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+controller_list:
+
+  - name: "kuka_controller/position_controller"
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - kuka_joint_a1
+      - kuka_joint_a2
+      - kuka_joint_a3
+      - kuka_joint_a4
+      - kuka_joint_a5
+      - kuka_joint_a6
+      - kuka_joint_a7
+
+  - name: "ur10e_controller/position_controller"
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - ur10e_shoulder_pan_joint
+      - ur10e_shoulder_lift_joint
+      - ur10e_elbow_joint
+      - ur10e_wrist_1_joint
+      - ur10e_wrist_2_joint
+      - ur10e_wrist_3_joint
+
+  - name: "ur10e_controller/gripper_controller"
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    joints:
+      - ur10e_upper_finger_base
+      - ur10e_lower_finger_base

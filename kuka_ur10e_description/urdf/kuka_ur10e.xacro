@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<robot name="ur10e" xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <link name="world"/>
+  <xacro:include filename="$(find ur10e_description)/urdf/whole_model.xacro"/>
+  <xacro:whole_model prefix="ur10e" pose="0 -1 0" rpy="0 0 0"/>
+
+  <xacro:include filename="$(find kuka_lbr_iiwa_support)/urdf/whole_model.xacro"/>
+  <xacro:whole_model prefix="kuka" pose="0 1 0" rpy="0 0 0"/>
+
+</robot>

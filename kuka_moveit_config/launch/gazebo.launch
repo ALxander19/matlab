@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="paused" default="false"/>
+  <arg name="gazebo_gui" default="true"/>
+
+  <!-- startup simulated world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" default="worlds/empty.world"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="gui" value="$(arg gazebo_gui)"/>
+  </include>
+
+  <include file="$(find kuka_moveit_config)/launch/robot_spawner.launch">
+    <arg name="init_pose" value="-x 0 -y 0 -z 0"/>
+    <arg name="robot_name" value="kuka"/>
+  </include>
+</launch>

@@ -1,0 +1,43 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+position_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - kuka_joint_a1
+    - kuka_joint_a2
+    - kuka_joint_a3
+    - kuka_joint_a4
+    - kuka_joint_a5
+    - kuka_joint_a6
+    - kuka_joint_a7
+
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 0.1
+    kuka_joint_a1: {trajectory: 0.1, goal: 0.2}
+    kuka_joint_a2: {trajectory: 0.1, goal: 0.2}
+    kuka_joint_a3: {trajectory: 0.1, goal: 0.2}
+    kuka_joint_a4: {trajectory: 0.1, goal: 0.2}
+    kuka_joint_a5: {trajectory: 0.1, goal: 0.2}
+    kuka_joint_a6: {trajectory: 0.1, goal: 0.2}
+    kuka_joint_a7: {trajectory: 0.1, goal: 0.2}
+
+  stop_trajectory_duration: 0.5
+  state_publish_rate:  50
+  action_monitor_rate: 30
+
+controller_list:
+  - name: "position_controller"
+    action_ns: follow_joint_trajectory
+    default: True
+    type: FollowJointTrajectory
+    joints:
+      - kuka_joint_a1
+      - kuka_joint_a2
+      - kuka_joint_a3
+      - kuka_joint_a4
+      - kuka_joint_a5
+      - kuka_joint_a6
+      - kuka_joint_a7

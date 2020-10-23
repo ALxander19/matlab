@@ -1,0 +1,28 @@
+controller_list:
+  - name: fake_kuka_vacuum_gripper_controller
+    joints:
+      - kuka_joint_a1
+      - kuka_joint_a2
+      - kuka_joint_a3
+      - kuka_joint_a4
+      - kuka_joint_a5
+      - kuka_joint_a6
+      - kuka_joint_a7
+  - name: fake_kuka_impact_wrench_controller
+    joints:
+      - kuka_joint_a1
+      - kuka_joint_a2
+      - kuka_joint_a3
+      - kuka_joint_a4
+      - kuka_joint_a5
+      - kuka_joint_a6
+      - kuka_joint_a7
+  - name: fake_kuka_camera_controller
+    joints:
+      - kuka_joint_a1
+      - kuka_joint_a2
+      - kuka_joint_a3
+      - kuka_joint_a4
+      - kuka_joint_a5
+      - kuka_joint_a6
+      - kuka_joint_a7
