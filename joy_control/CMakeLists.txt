@@ -14,6 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   matlab_gmm
+  moveit_visual_tools
 )
 
 find_package(Eigen3 REQUIRED)
@@ -138,9 +139,17 @@ target_link_libraries(test_joy ${catkin_LIBRARIES})
 add_executable(test_moveit src/test_moveit.cpp)
 target_link_libraries(test_moveit ${catkin_LIBRARIES})
 
+add_executable(visual_moveit src/visual_moveit.cpp)
+target_link_libraries(visual_moveit ${catkin_LIBRARIES})
+
 add_executable(test_traj src/test_traj.cpp)
 add_dependencies(test_traj ${catkin_EXPORTED_TARGETS})
 target_link_libraries(test_traj ${catkin_LIBRARIES})
+
+add_executable(test_visual src/test_visual.cpp)
+add_dependencies(test_visual ${catkin_EXPORTED_TARGETS})
+target_link_libraries(test_visual ${catkin_LIBRARIES})
+
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries

@@ -99,14 +99,15 @@ int main(int argc, char** argv) {
   float lin_vel = 0.005, ang_vel = 0.05;
 
   //float xi = 0.8, yi = 0.0, zi = 0.3;
-  float xi = 0.0, yi = -0.4, zi = 1.3;
+  float xi = 0.2, yi = -0.2, zi = 1.3;
   float dx = 1*lin_vel, dy = 1*lin_vel, dz = 1*lin_vel;
 
   //double roll = 0.0, pitch = 1.5708, yaw = 0.0;
-  double roll = 0.0, pitch = 0.0, yaw = 1.5708;
+  double roll = 0.0, pitch = 0.0, yaw = 0.7854;
   double droll = 1*ang_vel, dpitch = 1*ang_vel, dyaw = 1*ang_vel;
-  double qw, qx, qy, qz;
-  tie(qw,qx,qy,qz) = eulertoquat(roll, pitch, yaw);
+  //double qw, qx, qy, qz;
+  //tie(qw,qx,qy,qz) = eulertoquat(roll, pitch, yaw);
+  double qw = 0.924 , qx = 0.0, qy = 0.0, qz = 0.383;
 
   geometry_msgs::Pose target_pose;
   target_pose.orientation.x = qx;

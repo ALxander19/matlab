@@ -37,7 +37,7 @@ def eulertoquatertion(roll,pitch,yaw):
 
 if __name__ == '__main__':
 
-  roll = 0.0; pitch = 1.5708 ; yaw = 0.0
+  roll = 0.0; pitch = 1.5708/2 ; yaw = 0.0
   print eulertoquatertion(roll,pitch,yaw)
   print "------------"
   roll = 0.0; pitch = 1.6208 ; yaw = 0.0

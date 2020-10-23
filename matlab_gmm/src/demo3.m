@@ -96,7 +96,9 @@ for n=1:nbVar-1
   plotGMM(expData([1,n+1],:), expSigma(n,n,:), [0 0 .8], 3);
   axis([min(expData(1,:)) max(expData(1,:)) min(expData(n+1,:))-0.02 max(expData(n+1,:))+0.02]);
   xlabel('t','fontsize',16); ylabel(['x_' num2str(n)],'fontsize',16);
-end
+end%plot 2D%plot 2D
+
+
 %plot 2D
 subplot(3*(nbVar-1),2,8+[2:2:2*(nbVar-1)]); hold on;
 plotGMM(expData([2,3],:), expSigma([1,2],[1,2],:), [0 0 .8], 2);
@@ -104,8 +106,10 @@ axis([min(expData(2,:))-0.02 max(expData(2,:))+0.02 min(expData(3,:))-0.02 max(e
 xlabel('x_1','fontsize',16); ylabel('x_2','fontsize',16);
 
 %color = [0 0 .8];
-out1 = Mu(1,:);
-out2 = Mu(2,:);
+%figure(4)
+%plot(expData(2,:),expData(3,:))
+out1 = expData(2,:);
+out2 = expData(3,:);
 
 %pause;
 close all;

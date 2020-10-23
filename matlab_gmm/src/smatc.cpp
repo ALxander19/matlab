@@ -12,6 +12,6 @@ int main(int argc, char **argv) {
 
   ros::init(argc, argv, "subs");
   ros::NodeHandle nh;
-  ros::Subscriber sub = nh.subscribe("arrays", 1000, &callback);
+  ros::Subscriber sub = nh.subscribe("arrays3", 1000, &callback);
   ros::spin();
 }

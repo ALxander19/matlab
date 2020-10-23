@@ -7,7 +7,7 @@ from matlab_gmm.msg import Num
 if __name__ == '__main__':
 
   rospy.init_node('publisher')
-  pub = rospy.Publisher('arrays', Num, queue_size=10)
+  pub = rospy.Publisher('arrays3', Num, queue_size=10)
   rate = rospy.Rate(1)
 
   eng = meng.start_matlab()
